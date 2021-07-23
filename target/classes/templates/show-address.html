@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Addresses</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    </head>
+    <body>
+    <div class="container my-5">
+            <div class="row">
+                <div class="col-md-10">
+                        <h2 class="my-5">Addresses</h2>
+                        <a href="/index">Home</a>
+                        <br>
+            			<br>
+                        <table class="table table-striped table-responsive-md">
+                            <thead>
+                                <tr>
+                                	<th>Id</th>
+                                	<th>First Name</th>
+                                    <th>Last Name</th>
+                                    <th>Street</th>
+                                    <th>City</th>
+                                    <th>State</th>
+                                    <th>Postal Code</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr th:each="addr : ${listAddress}">
+                                	<td th:text="${addr.id}"></td>
+                                	<td th:text="${addr.person.fname}"></td>
+                                    <td th:text="${addr.person.lname}"></td>
+                                    <td th:text="${addr.street}"></td>
+                                    <td th:text="${addr.city}"></td>
+                                    <td th:text="${addr.state}"></td>
+                                    <td th:text="${addr.postalCode}"></td>
+                                    
+                                    <td><a th:href="@{/edit/address/{id}(id=${addr.id})}" class="btn btn-primary"><i class="fas fa-user-edit ml-2"></i></a></td>
+                                    <td><a th:href="@{/delete/address/{id}(id=${addr.id})}" class="btn btn-primary"><i class="fas fa-user-times ml-2"></i></a></td>
+                                    
+                                    
+                                </tr>
+                            </tbody>
+                        </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
