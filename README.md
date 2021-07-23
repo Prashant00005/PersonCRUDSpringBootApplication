@@ -5,3 +5,5 @@ Instructions to run the application:
 * Download the jar file: "PersonCRUDSpringBootApplication/target/TakeHomeTask-0.0.1-SNAPSHOT.jar"
 * Execute the jar file using the command: "java -jar TakeHomeTask-0.0.1-SNAPSHOT.jar"
 * Open Google chrome web browser and go to the url: "localhost:8080"
+
+Note: Make sure you have Java 8 installed on your machine.
